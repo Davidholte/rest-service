@@ -12,5 +12,7 @@
   </head>
   <body>
     <p><a href="rest/myresource">Jersey resource</a>
+    <p><a href="rest/user">User resource</a>
+    <p><a href="rest/number">Number</a>
   </body>
 </html>
