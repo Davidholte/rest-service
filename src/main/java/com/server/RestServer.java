@@ -1,4 +1,4 @@
-package com.dave;
+package com.server;
 
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.net.URI;
 
 /**
- * Main class.
- *
+ * RestServer class.
+ * Created by Dave on 27/02/19.
  */
-public class Main {
+public class RestServer {
     // Base URI the Grizzly HTTP server will listen on
     public static final String BASE_URI = "http://0.0.0.0:8080/myapp/";
 
@@ -22,7 +22,7 @@ public class Main {
     public static HttpServer startServer() {
         // create a resource config that scans for JAX-RS resources and providers
         // in com.dekses.jersey.docker.demo package
-        final ResourceConfig rc = new ResourceConfig().packages("com.dave");
+        final ResourceConfig rc = new ResourceConfig().packages("com.resources");
 
         // create and start a new instance of grizzly http server
         // exposing the Jersey application at BASE_URI
@@ -30,7 +30,7 @@ public class Main {
     }
 
     /**
-     * Main method.
+     * RestServer method.
      * @param args
      * @throws IOException
      */

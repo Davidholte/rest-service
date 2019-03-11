@@ -1,4 +1,4 @@
-package com.dave;
+package com.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -6,10 +6,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 /**
- * Created by Dave on 27/02/19.
+ * Created by Dave on 11/03/19.
  */
-@Path("myresource")
-public class MyResource {
+@Path("./user")
+public class UserResource {
 
     /**
      * Method handling HTTP GET requests. The returned object will be sent
