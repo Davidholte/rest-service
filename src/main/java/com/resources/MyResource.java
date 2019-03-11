@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * Created by Dave on 27/02/19.
  */
-@Path("./myresource")
+@Path("/myresource")
 public class MyResource {
 
     /**
