@@ -16,7 +16,7 @@ public class DBQuickAccess {
     private Connection connect() {
 
         // SQLite connection string
-        String url = "jdbc:sqlite:database.db";
+        String url = "jdbc:sqlite:test.db";
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -29,17 +29,19 @@ public class DBQuickAccess {
     /**
      * Insert a new row into the test table
      *
-     * @param label
-     * @param content
+     * @param username
+     * @param password
+     * @param email
      */
-    public void insert(String label, String content) {
+    public void insert(String username, String password, String email) {
 
-        String sql = "INSERT INTO test(label, content) VALUES(?,?)";
+        String sql = "INSERT INTO accounts(username, password, email) VALUES(?,?,?)";
 
         try (Connection conn = this.connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, label);
-            pstmt.setString(2, content);
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            pstmt.setString(3, email);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -53,9 +55,9 @@ public class DBQuickAccess {
 
         DBQuickAccess app = new DBQuickAccess();
         // insert three new rows
-        app.insert("Best", "Besteth me nought!");
-        app.insert("Better", "Bestter than best?");
-        app.insert("Nonsense", "Absolute nonsense!");
+        app.insert("Dave", "1234", "dave@dave.dave");
+        app.insert("Sven", "admin", "sven@sven.sven");
+        app.insert("Lars", "admin1234", "lars@lars.lars");
     }
 
 }
