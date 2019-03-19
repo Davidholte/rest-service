@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 /**
  * Created by Dave on 27/02/19.
  */
-@Path("/myresource")
+@Path("/myresource2")
 public class MyResource {
 
     /**
@@ -20,6 +20,6 @@ public class MyResource {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        return "Got it!";
+        return "Got it motherfucker!";
     }
 }
